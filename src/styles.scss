@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "GoogleFont";
+  src: url("./assets/Product Sans Regular.ttf");
+}
+html {
+  font-family: "GoogleFont";
+  color: rgba(41,40,40,0.81)
+}
+
+h3, a {
+  cursor: pointer;
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+span.right {
+  float: right;
+  font-size: 14px;
+}
+
+h4, h5 {
+  color: #ff6a6a;
+  padding: 0;
+  margin: 0;
+}
+
+.tags {
+  padding: 7px 0;
+  span {
+    padding: 2px;
+    margin: 3px;
+    background-color: #ececec;
+    font-size: 13px;
+    border-radius: 3px;
+    font-weight: 500;
+    box-shadow: 1px 1px 1px #cecece;
+  }
+}
+
+.a4 {
+  width: 210mm;
+  margin: auto;
+  border: 1px solid #ececec;
+  box-shadow: 1px 1px 8px #cecece;
+  padding: 15mm;
+}
+

@@ -1,56 +1,182 @@
-<div class="a4" id="a4">
-  <div>
-    Saintur .B / esaintor@gmail.com / <a href="https://github.com/esaintor" target="_blank">github.com/esaintor</a>
-  </div>
-  <h3>
-    {{json.title}}
-  </h3>
-  <div *ngFor="let experience of json.experiences">
-    <h4>
+<div  class="a4 new-theme" id="a4">
+  <div *ngIf="theme === 'google'">
+    <div>
+      {{user.fullname}} / {{user.email}} / <a [href]="user.gitlab" target="_blank">github.com/esaintor</a>
+    </div>
+    <h3>
+      {{json.title}}
+    </h3>
+    <div *ngFor="let experience of json.experiences">
+      <h4>
       <span>{{experience.as}}, {{experience.where}}
       </span>
-      <span class="right">{{experience.from}} - {{experience.to}}
+        <span class="right">{{experience.from}} - {{experience.to}}
       </span>
-    </h4>
-    <ul>
-      <li *ngFor="let item of experience.items">
-        <div>{{item.description}}</div>
-        <div class="tags">
-          <span *ngFor="let tag of item.tags">{{tag}}</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <h3>
-    {{json.education}}
-  </h3>
-  <div>
-    <ul>
-      <li *ngFor="let education of json.educations">
-        <div>
+      </h4>
+      <ul>
+        <li *ngFor="let item of experience.items">
+          <div>{{item.description}}</div>
+          <div class="tags">
+            <span *ngFor="let tag of item.tags">{{tag}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <h3>
+      {{json.education}}
+    </h3>
+    <div>
+      <ul>
+        <li *ngFor="let education of json.educations">
+          <div>
           <span>{{education.as}}, {{education.where}}
       </span>
-          <span class="right">{{education.from}} - {{education.to}}
+            <span class="right">{{education.from}} - {{education.to}}
       </span>
-        </div>
-        <div class="tags">
-          <span *ngFor="let tag of education.tags">{{tag}}</span>
-        </div>
-      </li>
-    </ul>
+          </div>
+          <div class="tags">
+            <span *ngFor="let tag of education.tags">{{tag}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <h3>
+      {{json.certificate}}
+    </h3>
+    <div>
+      <ul>
+        <li *ngFor="let certificate of json.certificates">
+          <div>{{certificate.description}}</div>
+          <div class="tags">
+            <span *ngFor="let tag of certificate.tags">{{tag}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-  <h3>
-    {{json.certificate}}
-  </h3>
-  <div>
-    <ul>
-      <li *ngFor="let certificate of json.certificates">
-        <div>{{certificate.description}}</div>
-        <div class="tags">
-          <span *ngFor="let tag of certificate.tags">{{tag}}</span>
+  <div *ngIf="theme === 'new'">
+    <div class="new-header">
+      <div>{{user.firstname}} {{user.lastname}}</div>
+    </div>
+    <div class="new-body">
+      <div class="row">
+        <div class="left-side">
+          <div class="position">{{user.position}}</div>
         </div>
-      </li>
-    </ul>
+        <div class="main-content">
+          <div class="grid grid-item-3">
+            <div>
+              <div><strong>Email</strong></div>
+              <div class="secondary-text">{{user.email}}</div>
+            </div>
+            <div>
+              <div><strong>Phone</strong></div>
+              <div class="secondary-text">{{user.phone}}</div>
+            </div>
+            <div>
+              <div><strong>Github</strong></div>
+              <div class="secondary-text">{{user.gitlab}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left-side">
+          <div class="address">Address</div>
+          <div class="secondary-text">
+            Near Selbe river, Ulaanbaatar, Mongolia
+          </div>
+        </div>
+        <div class="main-content">
+          <ul>
+            <li>
+              <div class="front">
+                <div class="profile">
+                  <img width="100%" src="assets/profile.jpg"/>
+                </div>
+              </div>
+              <div class="back">
+                <div class="detail">
+                  {{user.detail}}
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="row">
+        <div class="left-side">
+          <h2>Work Experience</h2>
+        </div>
+        <div class="main-content">
+          <ul>
+            <li *ngFor="let item of json.experiences">
+              <div class="front">
+                <div><strong>{{item.from}} - {{item.to}}</strong></div>
+                <div class="secondary-text">{{item.where}}</div>
+              </div>
+              <div class="back">
+                <div><strong>{{item.as}}</strong></div>
+                <div class="item" *ngFor="let desc of item.items">
+                  <div>{{desc.description}}</div>
+                  <span class="tag" *ngFor="let tag of desc.tags">{{tag}}</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left-side">
+          <h2>Work Education</h2>
+        </div>
+        <div class="main-content">
+          <ul>
+            <li *ngFor="let item of json.educations">
+              <div class="front">
+                <div><strong>{{item.from}} - {{item.to}}</strong></div>
+                <div class="secondary-text">{{item.where}}</div>
+              </div>
+              <div class="back">
+                <div><strong>{{item.as}}</strong></div>
+                <span class="tag" *ngFor="let tag of item.tags">{{tag}}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left-side">
+          <h2>Skills</h2>
+        </div>
+        <div class="main-content">
+         <div class="grid grid-item-3">
+           <div class="" *ngFor="let item of json.skills">
+             <span class="skill">{{item}}</span>
+           </div>
+         </div>
+        </div>
+      </div>
+<!--      <div class="row">-->
+<!--        <div class="left-side">-->
+<!--          <h3>Courses</h3>-->
+<!--        </div>-->
+<!--        <div class="main-content">-->
+<!--          <ul>-->
+<!--            <li *ngFor="let item of json.certificates">-->
+<!--              <div class="front">-->
+
+<!--              </div>-->
+<!--              <div class="back">-->
+<!--                <div>{{item.description}}</div>-->
+<!--                <div *ngFor="let tag of item.tags">{{tag}}</div>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
   </div>
 </div>
 

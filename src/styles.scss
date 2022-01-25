@@ -3,14 +3,33 @@
   font-family: "GoogleFont";
   src: url("./assets/Product Sans Regular.ttf");
 }
+
+@font-face {
+  font-family: "nunito";
+  src: url("./assets/Nunito-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url("./assets/Nunito-Medium.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url("./assets/Nunito-Regular.ttf");
+  font-weight: 500;
+}
 html {
   font-family: "GoogleFont";
-  color: rgba(41,40,40,0.81)
+  color: rgba(41,40,40,0.81);
+  background: white;
 }
 
 h3, a {
   cursor: pointer;
-  color: dodgerblue;
+  //color: dodgerblue;
   text-decoration: none;
 }
 
@@ -19,8 +38,8 @@ span.right {
   font-size: 14px;
 }
 
-h4, h5 {
-  color: #ff6a6a;
+h3, h4, h5 {
+  //color: #ff6a6a;
   padding: 0;
   margin: 0;
 }
@@ -41,8 +60,108 @@ h4, h5 {
 .a4 {
   width: 210mm;
   margin: auto;
-  border: 1px solid #ececec;
-  box-shadow: 1px 1px 8px #cecece;
+  //border: 1px solid #ececec;
+  box-shadow: 1px 1px 4px #cecece;
   padding: 15mm;
+  background: #fdf9ef;
+}
+.separator {
+  display: block;
+  height: 32px;
+}
+.new-header {
+  div {
+    font-size: 60px;
+    font-weight: 700;
+  }
+}
+.new-theme {
+  //background: antiquewhite;
+  font-family: 'nunito', SansSerif;
+  font-size: 14px;
 }
 
+.position {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.address {
+  font-size: 16px;
+  border-bottom: 2px solid gray;
+  max-width: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  li {
+    display: inline-flex;
+    width: 100%;
+    flex: 1;
+    margin-bottom: 12px;
+    div.front {
+      width: 36%;
+      font-size: 14px;
+    }
+    div.back {
+      width: 64%;
+      .item {
+        margin-bottom: 16px;
+      }
+    }
+
+    span.tag {
+      font-size: 13px;
+      padding: 3px;
+      color: gray;
+    }
+  }
+}
+.row {
+  display: inline-flex;
+  width: 100%;
+  flex: 1;
+  .col-3 {
+    width: 33.33%;
+  }
+  .left-side {
+    width: 30%;
+    h2 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid gray;
+      width: fit-content;
+    }
+  }
+  .main-content {
+    width: 70%;
+    padding-top: 12px;
+  }
+}
+.skill {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.grid-item-3 {
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-gap: 16px;
+}
+.grid {
+  display: grid;
+}
+.secondary-text {
+  color: gray;
+}
+.profile {
+  margin-top: 10px;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 60px;
+  overflow: hidden;
+}
+.detail {
+  padding: 16px 0;
+}
